@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class IceBullet : MonoBehaviour {
 
-    private void OnTriggerEnter(Collider other)
-    {
-        print("Hit" + other.name + "!");
-        Destroy(gameObject);
-    }
+    public float LifeTime;
 
-    // Use this for initialization
-    void Start () {
+	// Use this for initialization
+	void Start () {
+
+        Destroy(gameObject, LifeTime * Time.deltaTime);
 		
 	}
 	

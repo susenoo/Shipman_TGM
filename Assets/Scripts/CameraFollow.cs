@@ -23,6 +23,10 @@ public class CameraFollow : MonoBehaviour {
 	private float rotY = 0.0f;
 	private float rotX = 0.0f;
 
+    public Transform SprintLocation;
+    public Transform WalkLocation;
+
+    public bool Sprinting;
 
 
 	// Use this for initialization
@@ -66,6 +70,16 @@ public class CameraFollow : MonoBehaviour {
 
 		//move towards the game object that is the target
 		float step = CameraMoveSpeed * Time.deltaTime;
-		transform.position = Vector3.MoveTowards (transform.position, target.position, step);
-	}
+        //transform.position = Vector3.MoveTowards (transform.position, target.position, step);
+
+        if (Sprinting)
+        {
+            transform.position = Vector3.Lerp(transform.position, SprintLocation.position, Time.deltaTime * CameraMoveSpeed);
+        }
+        else
+        {
+            transform.position = Vector3.Lerp(transform.position, WalkLocation.position, Time.deltaTime * CameraMoveSpeed);
+        }
+
+    }
 }
