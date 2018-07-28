@@ -10,7 +10,18 @@ ModelImporter:
     4300000: ManholeCover
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ManholeCoverMat__ManoleCover
+    second: {fileID: 2100000, guid: c59c6ab7662823c4a83b8041b4846d20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ManholeCoverMat__Sewer_png
+    second: {fileID: 2100000, guid: 45b3e819d6067e84e9263d7b52eabdfd, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
