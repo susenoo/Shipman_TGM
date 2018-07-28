@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 136592128318171342}
   - component: {fileID: 54438625330249680}
   m_Layer: 0
-  m_Name: RangedEnemy
+  m_Name: SRE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
