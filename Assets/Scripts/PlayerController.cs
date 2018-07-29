@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour {
 
 
         //Gun Rotation
-        Quaternion _targetROTGun = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles.x, IceGunTransform.rotation.eulerAngles.y, IceGunTransform.rotation.eulerAngles.z);
+        Quaternion _targetROTGun = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles.x, Camera.main.transform.rotation.eulerAngles.y, IceGunTransform.rotation.eulerAngles.z);
         IceGunTransform.rotation = Quaternion.Slerp(IceGunTransform.rotation, _targetROTGun, Time.deltaTime * GunTurnSpeed);
         //Gun Rotation
 

@@ -10,11 +10,21 @@ public class IceBullet : MonoBehaviour {
 	void Start () {
 
         Destroy(gameObject, LifeTime * Time.deltaTime);
+
+        
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

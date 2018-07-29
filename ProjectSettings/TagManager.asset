@@ -14,6 +14,7 @@ TagManager:
   - Waypoint
   - Destructible
   - Breadcrumb
+  - IceBullet
   layers:
   - Default
   - TransparentFX
