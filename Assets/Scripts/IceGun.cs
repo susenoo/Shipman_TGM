@@ -32,8 +32,7 @@ public class IceGun : MonoBehaviour {
     {
         GameObject IceBullet = Instantiate(IceBulletPrefab);
 
-        Physics.IgnoreCollision(IceBullet.GetComponent<Collider>(),
-            IceBulletSpawn.parent.GetComponent<Collider>());
+        //Physics.IgnoreCollision(IceBullet.GetComponent<Collider>(),IceBulletSpawn.parent.GetComponent<Collider>());
 
         IceBullet.transform.position = IceBulletSpawn.position;
 

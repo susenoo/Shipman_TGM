@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour {
     public float GunTurnSpeed;
     Quaternion _targetROT;
 
+    Rigidbody rb;
+
+    public bool OnPlatform;
+
     //public Transform playerRotation;
 
 
@@ -33,11 +37,14 @@ public class PlayerController : MonoBehaviour {
         controller = GetComponent<CharacterController>();
 
         MoveSpeed = WalkSpeed;
-
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
+
+
+        
+
 
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -72,6 +79,19 @@ public class PlayerController : MonoBehaviour {
         moveDirection.y = yStore;
         //Player move in direction of camera//
 
+        if(Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0){
+            if (OnPlatform)
+            {
+                //transform.SetParent(null);
+                //Debug.Log("Vertical and horizontal are equal to zero my parent = " + transform.parent);
+            }
+        }
+
+        if(OnPlatform == false && transform.parent != null)
+        {
+            transform.SetParent(null);
+        }
+
 
         if (controller.isGrounded)
         {
@@ -79,6 +99,7 @@ public class PlayerController : MonoBehaviour {
             if (Input.GetButtonDown("Jump"))
             {
                 moveDirection.y = jumpForce;
+                //controller.Move(-controller.velocity);
             }
         }
 
@@ -94,7 +115,6 @@ public class PlayerController : MonoBehaviour {
         transform.rotation = Quaternion.Slerp(transform.rotation, _targetROT, Time.deltaTime * TurnSpeed);
         ///Character camera rotation
 
-
         //Gun Rotation
         Quaternion _targetROTGun = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles.x, Camera.main.transform.rotation.eulerAngles.y, IceGunTransform.rotation.eulerAngles.z);
         IceGunTransform.rotation = Quaternion.Slerp(IceGunTransform.rotation, _targetROTGun, Time.deltaTime * GunTurnSpeed);
@@ -108,4 +128,57 @@ public class PlayerController : MonoBehaviour {
 
 		
 	}
+
+    private void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("Player Hit tRIGGER Something. Tag = " + col.tag);
+        if (col.gameObject.tag == "Platform")
+        {
+            OnPlatform = true;
+            transform.SetParent(col.gameObject.transform);
+            Debug.Log("Triggered Platform my parent = " + transform.parent);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "Platform")
+        {
+            OnPlatform = true;
+        }
+        else
+        {
+            OnPlatform = false;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Platform")
+        {
+            OnPlatform = false;
+        }
+    }
+
+    //Player colliding wiht box
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == ("Player"))
+        {
+            rb.isKinematic = false;
+            Destroy(col.gameObject);
+
+            Debug.Log("Hit object and it's tag is player");
+            Debug.Log("Player Hit Something");
+        }
+
+    }
+
+    /*private void OnCollisionEnter(Collision collision)
+    {
+
+        Debug.Log("Player Hit Something");
+
+  
+    }*/
+
 }

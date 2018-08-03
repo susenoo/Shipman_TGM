@@ -15,6 +15,7 @@ TagManager:
   - Destructible
   - Breadcrumb
   - IceBullet
+  - Platform
   layers:
   - Default
   - TransparentFX

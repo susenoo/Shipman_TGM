@@ -16,15 +16,24 @@ public class FallingObjects : MonoBehaviour {
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag ==("Player"))
+        if (col.gameObject.tag == ("Player"))
+        {
             rb.isKinematic = false;
+
+            
+        }
     }
 
-    private void OnTriggerEnter(Collision col)
+    private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag ==("Player"))
+        if (col.gameObject.tag == ("Player"))
+        {
+            rb.isKinematic = false;
+            Destroy(col.gameObject);
+
+            Debug.Log("Hit object and it's tag is player");
+        }
             
-            Destroy(gameObject);
     }
 
     // Update is called once per frame
