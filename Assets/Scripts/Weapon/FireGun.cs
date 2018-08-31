@@ -32,23 +32,23 @@ public class FireGun : MonoBehaviour {
 
     private void Fire()
     {
-        GameObject IceBullet = Instantiate(FireBulletPrefab);
+        GameObject FireBullet = Instantiate(FireBulletPrefab);
 
         //Physics.IgnoreCollision(IceBullet.GetComponent<Collider>(),IceBulletSpawn.parent.GetComponent<Collider>());
 
-        IceBullet.transform.position = FireBulletSpawn.position;
+        FireBullet.transform.position = FireBulletSpawn.position;
 
-        Vector3 rotation = IceBullet.transform.rotation.eulerAngles;
+        Vector3 rotation = FireBullet.transform.rotation.eulerAngles;
 
-        IceBullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+        FireBullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
 
-        IceBullet.GetComponent<Rigidbody>().AddForce(FireBulletSpawn.forward * FireBulletSpeed, ForceMode.Impulse);
+        FireBullet.GetComponent<Rigidbody>().AddForce(FireBulletSpawn.forward * FireBulletSpeed, ForceMode.Impulse);
 
-        StartCoroutine(DestoryIceBulletAfterTime(IceBullet, lifeTime));
+        StartCoroutine(DestoryFireBulletAfterTime(FireBullet, lifeTime));
     }
 
 
-    private IEnumerator DestoryIceBulletAfterTime(GameObject IceBullet, float delay)
+    private IEnumerator DestoryFireBulletAfterTime(GameObject FireBullet, float delay)
     {
         yield return new WaitForSeconds(delay);
 

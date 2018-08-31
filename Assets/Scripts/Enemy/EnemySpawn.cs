@@ -6,6 +6,8 @@ public class EnemySpawn : MonoBehaviour {
 
     public GameObject Enemy;
     public Transform EnemyPos;
+    public Transform EnemyPos01;
+    public Transform EnemyPos02;
     public float RepeatRate = 5f;
 
 	// Use this for initialization
@@ -25,7 +27,11 @@ public class EnemySpawn : MonoBehaviour {
 
     void EnemySpawner()
     {
-        Instantiate(Enemy, EnemyPos.position, EnemyPos.rotation);
+        GameObject _newEnemy01 =  Instantiate(Enemy, EnemyPos.position, EnemyPos.rotation);
+
+        GameObject _newEnemy02 = Instantiate(Enemy, EnemyPos01.position, EnemyPos01.rotation);
+
+        Instantiate(Enemy, EnemyPos02.position, EnemyPos02.rotation);
     }
 
     // Update is called once per frame

@@ -32,23 +32,23 @@ public class ShockGun : MonoBehaviour {
 
     private void Fire()
     {
-        GameObject IceBullet = Instantiate(ShockBulletPrefab);
+        GameObject ShockBullet = Instantiate(ShockBulletPrefab);
 
         //Physics.IgnoreCollision(IceBullet.GetComponent<Collider>(),IceBulletSpawn.parent.GetComponent<Collider>());
 
-        IceBullet.transform.position = ShockBulletSpawn.position;
+        ShockBullet.transform.position = ShockBulletSpawn.position;
 
-        Vector3 rotation = IceBullet.transform.rotation.eulerAngles;
+        Vector3 rotation = ShockBullet.transform.rotation.eulerAngles;
 
-        IceBullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+        ShockBullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
 
-        IceBullet.GetComponent<Rigidbody>().AddForce(ShockBulletSpawn.forward * ShockBulletSpeed, ForceMode.Impulse);
+        ShockBullet.GetComponent<Rigidbody>().AddForce(ShockBulletSpawn.forward * ShockBulletSpeed, ForceMode.Impulse);
 
-        StartCoroutine(DestoryIceBulletAfterTime(IceBullet, lifeTime));
+        StartCoroutine(DestoryShockBulletAfterTime(ShockBullet, lifeTime));
     }
 
 
-    private IEnumerator DestoryIceBulletAfterTime(GameObject IceBullet, float delay)
+    private IEnumerator DestoryShockBulletAfterTime(GameObject ShockBullet, float delay)
     {
         yield return new WaitForSeconds(delay);
 

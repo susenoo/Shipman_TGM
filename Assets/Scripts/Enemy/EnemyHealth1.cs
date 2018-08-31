@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth1 : MonoBehaviour {
+public class EnemyHealth1 : MonoBehaviour  
+    {
+    /*
+   
 
     public float = 10;
 
@@ -20,5 +23,8 @@ public class EnemyHealth1 : MonoBehaviour {
         if (HealthBar &lt;=0)
     {
         Destroy(GameObject);
+        
 }
+*/
 }
+

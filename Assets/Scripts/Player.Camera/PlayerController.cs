@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour {
     private Vector3 moveDirection;
 
     public Transform IceGunTransform;
+    public Transform FireGunTransform;
+    public Transform ShockGunTransform;
 
 
 
@@ -118,6 +120,8 @@ public class PlayerController : MonoBehaviour {
         //Gun Rotation
         Quaternion _targetROTGun = Quaternion.Euler(Camera.main.transform.rotation.eulerAngles.x, Camera.main.transform.rotation.eulerAngles.y, IceGunTransform.rotation.eulerAngles.z);
         IceGunTransform.rotation = Quaternion.Slerp(IceGunTransform.rotation, _targetROTGun, Time.deltaTime * GunTurnSpeed);
+        
+        
         //Gun Rotation
 
 
