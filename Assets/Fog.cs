@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth1 : MonoBehaviour  
-    {
-    /*
-   
-
-    public float = 10;
+public class Fog : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -18,13 +13,11 @@ public class EnemyHealth1 : MonoBehaviour
 	void Update () {
 		
 	}
-
-    public void TakeDamage(float damage)
-        if (HealthBar &lt;=0)
+    public void OnTriggerStay(Collider other)
     {
-        Destroy(GameObject);
-        
+        if (other.gameObject.tag == "Poison")
+        {
+            InvokeRepeating("PoisonDamage", 1f, 1f);
+        }
+    }
 }
-*/
-}
-

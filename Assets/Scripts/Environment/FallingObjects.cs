@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FallingObjects : MonoBehaviour {
 
-    public float FallSpeed;
+    //public float FallSpeed;
     Rigidbody rb;
 
 	// Use this for initialization

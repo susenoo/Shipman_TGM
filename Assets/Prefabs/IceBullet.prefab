@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 135623957780791044}
   - component: {fileID: 54674682574666526}
   - component: {fileID: 114455748674857834}
+  - component: {fileID: 114965511501145770}
   m_Layer: 0
   m_Name: IceBullet
   m_TagString: IceBullet
@@ -113,6 +114,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeTime: 100
+--- !u!114 &114965511501145770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1020783756551858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0842a06f722a4e41950bad6658b37b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135623957780791044
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -17,6 +17,7 @@ TagManager:
   - IceBullet
   - Platform
   - Sword
+  - Posion
   layers:
   - Default
   - TransparentFX
