@@ -15,7 +15,7 @@ public class Fog : MonoBehaviour {
 	}
     public void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Poison")
+        if (other.gameObject.tag == "Player")
         {
             InvokeRepeating("PoisonDamage", 1f, 1f);
         }

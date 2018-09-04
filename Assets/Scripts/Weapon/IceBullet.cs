@@ -5,9 +5,10 @@ using UnityEngine;
 public class IceBullet : MonoBehaviour {
 
     public float LifeTime;
-
-	// Use this for initialization
-	void Start () {
+    
+    
+    // Use this for initialization
+    void Start () {
 
         Destroy(gameObject, LifeTime * Time.deltaTime);
 
@@ -24,7 +25,5 @@ public class IceBullet : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+   
 }
