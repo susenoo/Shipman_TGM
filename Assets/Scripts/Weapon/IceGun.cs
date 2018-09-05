@@ -1,21 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class IceGun : MonoBehaviour {
 
     public GameObject IceBulletPrefab;
-
     public Transform IceBulletSpawn;
-
     public float IceBulletSpeed = 30f;
-
     public float lifeTime = 3f;
 
-
+    
 
 	// Use this for initialization
 	void Start () {
+        
 		
 	}
 	
@@ -25,6 +24,8 @@ public class IceGun : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Fire();
+            //CameraShaker.Instance.ShakeOnce(1f, 1f, .1f, 1f);
+            
         }
 	}
 
