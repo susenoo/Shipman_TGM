@@ -5,14 +5,16 @@ using UnityEngine;
 public class Bugs : MonoBehaviour {
 
 	/*
-     1. While moving to the right and rotatinmg camera left, camera goes inside player.
-     2. Bullets dmg enemies
-     3. Enemy attacks hurt player
-     4. make orb tunr colors when damaged
-     Falling objects need to more force applied to fall faster
-     5. Giant collison trigger to kill player below level
-     6. Respawn Points
-     7. 
+     Bullets dmg enemies
+     make orb tunr colors when damaged
+     When player is killed by enemy, respawnt ot he correct corresponding respawn point
+     make bullets slerp in the correct end point in random
+     Fog do tick damage
+     fire and shock bullets shoot in direction of camera
+     play enemy animation when player is in trigger
+     Reset level when payer dies
 
-      */
+     
+
+     */
 }

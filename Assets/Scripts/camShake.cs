@@ -22,20 +22,24 @@ public class camShake : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (shouldShake)
-        {
-            if (duration > 0)
+             
+            if (shouldShake)
             {
-                camera.localPosition = startPosition + Random.insideUnitSphere * power;
-                duration -= Time.deltaTime * slowDownAmount;
-            }
-            else
-            {
-                shouldShake = false;
-                duration = initialDuration;
-                camera.localPosition = startPosition;
-            }
-        }
+                if (duration > 0)
+                
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                     camera.localPosition = startPosition + Random.insideUnitSphere * power;
+                     duration -= Time.deltaTime * slowDownAmount;
+                    }
 
+                    else
+                    {
+                     shouldShake = false;
+                     duration = initialDuration;
+                        camera.localPosition = startPosition;
+                    }
+                
+            }
     }
 }

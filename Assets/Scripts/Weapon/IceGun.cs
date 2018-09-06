@@ -10,6 +10,9 @@ public class IceGun : MonoBehaviour {
     public float IceBulletSpeed = 30f;
     public float lifeTime = 3f;
 
+    public camShake camShake;
+
+
     
 
 	// Use this for initialization
@@ -25,6 +28,7 @@ public class IceGun : MonoBehaviour {
         {
             Fire();
             //CameraShaker.Instance.ShakeOnce(1f, 1f, .1f, 1f);
+            camShake = GetComponent<camShake>();
             
         }
 	}

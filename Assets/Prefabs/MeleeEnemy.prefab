@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 114657563302165010}
   - component: {fileID: 136725677545741832}
   - component: {fileID: 114220337455109868}
+  - component: {fileID: 135553965189725834}
   m_Layer: 9
   m_Name: MeleeEnemy
   m_TagString: Enemy
@@ -833,6 +834,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b45f404e024a347830ec917622fff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &135553965189725834
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637550221852916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.9267197
+  m_Center: {x: 5.566028e-15, y: -1.8844523e-14, z: 0.57069445}
 --- !u!136 &136331934848388200
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -855,10 +868,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.50000006
+  m_Radius: 0.5871124
   m_Height: 1.9999998
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 4.643192e-16, y: -5.386753e-16, z: 0.012367725}
 --- !u!222 &222532957335037370
 CanvasRenderer:
   m_ObjectHideFlags: 1
