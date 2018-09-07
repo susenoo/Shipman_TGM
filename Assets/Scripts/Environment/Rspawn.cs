@@ -22,5 +22,7 @@ public class Rspawn : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         Player.transform.localPosition = respawnPoint01.transform.position;
+        Player.transform.localPosition = respawnPoint02.transform.position;
+        Player.transform.localPosition = respawnPoint03.transform.position;
     }
 }

@@ -9,15 +9,16 @@ public class IceGun : MonoBehaviour {
     public Transform IceBulletSpawn;
     public float IceBulletSpeed = 30f;
     public float lifeTime = 3f;
+    public camShake CamShakeScript;
 
-    public camShake camShake;
+    
 
 
     
 
 	// Use this for initialization
 	void Start () {
-        
+        CamShakeScript = FindObjectOfType<camShake>();
 		
 	}
 	
@@ -27,8 +28,8 @@ public class IceGun : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Fire();
-            //CameraShaker.Instance.ShakeOnce(1f, 1f, .1f, 1f);
-            camShake = GetComponent<camShake>();
+
+            CamShakeScript.shouldShake = true;
             
         }
 	}

@@ -8,12 +8,18 @@ public class Slerp : MonoBehaviour {
     public float journeyTime = 1f;
     public float speed;
     public bool repeatable;
+    public float EndPointOffsetMax;
     
 
     float startTime;
     Vector3 centerPoint;
     Vector3 startRelCenter;
     Vector3 endRelCenter;
+
+    private void Start()
+    {
+        endPos.SetParent(null);
+    }
 
     void Update()
     {
@@ -31,8 +37,13 @@ public class Slerp : MonoBehaviour {
     public void GetCenter(Vector3 direction)
     {
         centerPoint = (startPos.position + endPos.position) * 0.5f;
+
+
         centerPoint -= direction;
+        //centerPoint -= new Vector3(0, 10, 8);//Put Ray cast hit position here
+
         startRelCenter = startPos.position - centerPoint;
-        endRelCenter = endPos.position - centerPoint;
+
+        endRelCenter = (endPos.position - centerPoint);
     }
 }

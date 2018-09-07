@@ -30,7 +30,7 @@ public class MeleeHealth : MonoBehaviour {
         {
             currentHealth = 0;
             alive = false;
-            //gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
         currentHealth -= amount;
         SetHealthBar();

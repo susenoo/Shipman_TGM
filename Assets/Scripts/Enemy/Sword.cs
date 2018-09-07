@@ -13,7 +13,10 @@ public class Sword : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+        if (other.tag == ("Player"))
+        {
+            other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+        }
     }
 
     // Update is called once per frame
