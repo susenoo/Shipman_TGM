@@ -32,6 +32,7 @@ public class fallBox : MonoBehaviour {
         if (other.gameObject.tag == ("Player"))
         {
             Destroy(other.gameObject);
+            Application.LoadLevel(Application.loadedLevel);
         }
     }
 }

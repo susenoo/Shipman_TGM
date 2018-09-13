@@ -45,9 +45,11 @@ public class PlayerHealth : MonoBehaviour {
             currentHealth = 0;
             alive = false;
             gameObject.SetActive(false);
+            Application.LoadLevel(Application.loadedLevel);
         }
         currentHealth -= amount;
         SetHealthBar();
+
     }
 
     public void SetHealthBar()

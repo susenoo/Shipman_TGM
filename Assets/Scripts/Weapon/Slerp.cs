@@ -13,8 +13,8 @@ public class Slerp : MonoBehaviour {
 
     float startTime;
     Vector3 centerPoint;
-    Vector3 startRelCenter;
-    Vector3 endRelCenter;
+    Vector3 startRelCenter;//start realivent center
+    Vector3 endRelCenter;//end realivent center
 
     private void Start()
     {

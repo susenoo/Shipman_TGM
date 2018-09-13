@@ -12,6 +12,7 @@ public class IceGun : MonoBehaviour {
     public camShake CamShakeScript;
 
     
+    
 
 
     
@@ -57,4 +58,6 @@ public class IceGun : MonoBehaviour {
         yield return new WaitForSeconds(delay);
 
     }
+
+   
 }
