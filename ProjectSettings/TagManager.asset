@@ -4,7 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Shootable
+  - FallTrap
+  - Semi
+  - 1
+  - 2
+  - 3
+  - 4
+  - Enemy
+  - Waypoint
+  - Destructible
+  - Breadcrumb
+  - IceBullet
+  - Platform
+  - Sword
+  - Posion
   layers:
   - Default
   - TransparentFX
@@ -14,13 +27,13 @@ TagManager:
   - UI
   - 
   - 
-  - Lighting
-  - Ground
-  - Postprocessing
+  - Player
+  - Enemy
+  - Breadcrumb
+  - Waypoint
   - 
   - 
-  - 
-  - 
+  - Obstacle
   - 
   - 
   - 
@@ -39,9 +52,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Fire
-    uniqueID: 3804908061
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

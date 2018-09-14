@@ -49,7 +49,6 @@ public class PlayerHealth : MonoBehaviour {
         }
         currentHealth -= amount;
         SetHealthBar();
-
     }
 
     public void SetHealthBar()

@@ -6,8 +6,8 @@ public class Rspawn : MonoBehaviour {
 
     [SerializeField] private Transform Player;
     [SerializeField] private Transform respawnPoint01;
-   // [SerializeField] private Transform respawnPoint02;
-    //[SerializeField] private Transform respawnPoint03;
+    [SerializeField] private Transform respawnPoint02;
+    [SerializeField] private Transform respawnPoint03;
 
     // Use this for initialization
     void Start () {
@@ -22,7 +22,7 @@ public class Rspawn : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         Player.transform.localPosition = respawnPoint01.transform.position;
-        //Player.transform.localPosition = respawnPoint02.transform.position;
-        //Player.transform.localPosition = respawnPoint03.transform.position;
+        Player.transform.localPosition = respawnPoint02.transform.position;
+        Player.transform.localPosition = respawnPoint03.transform.position;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
 
+
 public class IceGun : MonoBehaviour {
 
     public GameObject IceBulletPrefab;
@@ -11,7 +12,11 @@ public class IceGun : MonoBehaviour {
     public float lifeTime = 3f;
     public camShake CamShakeScript;
 
+    public float range = 100;
+    public IceGun fpsGun;
     
+   
+
     
 
 
@@ -20,7 +25,8 @@ public class IceGun : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         CamShakeScript = FindObjectOfType<camShake>();
-		
+
+        
 	}
 	
 	// Update is called once per frame
@@ -29,11 +35,12 @@ public class IceGun : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Fire();
-
             CamShakeScript.shouldShake = true;
             
         }
-	}
+        
+
+    }
 
     private void Fire()
     {
@@ -50,6 +57,13 @@ public class IceGun : MonoBehaviour {
         IceBullet.GetComponent<Rigidbody>().AddForce(IceBulletSpawn.forward * IceBulletSpeed, ForceMode.Impulse);
 
         StartCoroutine(DestoryIceBulletAfterTime(IceBullet, lifeTime));
+
+        //Raycast
+        RaycastHit hit;
+        if (Physics.Raycast(fpsGun.transform.position, fpsGun.transform.forward, out hit, range))
+        {
+            Debug.Log(hit.transform.name);
+        }
     }
 
 
@@ -58,6 +72,4 @@ public class IceGun : MonoBehaviour {
         yield return new WaitForSeconds(delay);
 
     }
-
-   
 }
