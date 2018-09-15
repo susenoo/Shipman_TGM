@@ -30,6 +30,7 @@ public class FallingObjects : MonoBehaviour {
         {
             rb.isKinematic = false;
             Destroy(col.gameObject);
+            Application.LoadLevel(Application.loadedLevel);
 
             Debug.Log("Hit object and it's tag is player");
         }
