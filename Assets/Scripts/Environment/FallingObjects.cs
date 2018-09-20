@@ -6,9 +6,10 @@ public class FallingObjects : MonoBehaviour {
 
     //public float FallSpeed;
     Rigidbody rb;
+    public float resetDelay;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
         rb = GetComponent<Rigidbody>();
 		
@@ -23,6 +24,11 @@ public class FallingObjects : MonoBehaviour {
             
         }
     }
+    private void Reset()
+    {
+        Time.timeScale = 1f;
+
+    }
 
     private void OnCollisionEnter(Collision col)
     {
@@ -30,6 +36,8 @@ public class FallingObjects : MonoBehaviour {
         {
             rb.isKinematic = false;
             Destroy(col.gameObject);
+            Time.timeScale = 0.5f;
+            Invoke("Reset", resetDelay);
             Application.LoadLevel(Application.loadedLevel);
 
             Debug.Log("Hit object and it's tag is player");
@@ -41,4 +49,7 @@ public class FallingObjects : MonoBehaviour {
     void Update () {
 		
 	}
+    
+
+    
 }

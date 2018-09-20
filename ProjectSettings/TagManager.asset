@@ -18,6 +18,11 @@ TagManager:
   - Platform
   - Sword
   - Posion
+  - Gate05
+  - Gate01
+  - Gate02
+  - Gate03
+  - Gate04
   layers:
   - Default
   - TransparentFX
