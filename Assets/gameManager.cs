@@ -10,15 +10,23 @@ public class gameManager : MonoBehaviour {
     public GameObject WinBlackBG;
     public float resetDelay;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public int enemiesKilled;
+    public GameObject Gate01;
+    public GameObject Gate02;
+    public GameObject Gate05;
+    public Script MeleeHealth;
+
+    // Use this for initialization
+    void Start() {
+
+    }
+
+    // Update is called once per frame
+    void Update() {
+
+    }
+  
+
 
     private void Awake()
     {
