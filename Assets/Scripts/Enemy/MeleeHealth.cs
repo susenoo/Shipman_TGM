@@ -10,6 +10,7 @@ public class MeleeHealth : MonoBehaviour {
     public float currentHealth = 0f;
     public bool alive = true;
 
+
     // Use this for initialization
     void Start () {
 
@@ -36,6 +37,8 @@ public class MeleeHealth : MonoBehaviour {
         currentHealth -= amount;
         SetHealthBar();
     }
+    
+    
 
     public void SetHealthBar()
     {
